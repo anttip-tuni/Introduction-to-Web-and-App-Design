@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+       
+    <script>
+        //This is a comment, meaning it just explains things for the programmer
+
+        /* 
+        This is a multi-line comment
+        which can span multiple lines */
+
+
+        //Semicolons are not mandatory in simple statements like this, when they are separated by a line break
+        let me = 1
+        let you = 2
+
+        //here a semicolon is absolutely needed to separate the three statements:
+        for (let i = 0; i < 5; i++){}
+
+
+        //double quotes signify a string
+        let word = "hello";
+
+        //here word is not a string, but a variable reference (which does contain a string)
+        let speech = word;
+
+
+
+        // The backslash is an escape character \
+
+        let mystring = 'It\'s my life';
+
+        //another way around the issue is to use double quotes when apostrophies are needed
+        let myquotedstring = "It's my life";
+
+
+        //in JS the comma , is used to sepaerate values
+
+        let a, b;
+
+        let myArray = ["apple", "banana", "cherry"];
+
+        //dots . separate decimals in JS
+        let mynumber = 5.7;
+
+        //dots also serve as property accessors
+        alert(mystring.length); //12
+
+        //in regular math parenthesis are used to signify priority
+
+        let myMathCalc = 1 + 2 * 5; //11
+
+        let myMathCalc2 = (1 + 2) * 5; //15
+
+        //in JS, outside a math equation, the parenthesis are used to both execute and send arguments to a function call
+
+        console.log(myquotedstring);
+
+        //curly brackets create code blocks {}
+
+        function ounceConverter(amount){
+            console.log(amount * 28.3495231); //use in the console by typing ounceConverter(5) --> 141 gr
+        }
+
+        //square brackets create arrays [] check line 47 for an example
+
+        //an equal sign assigns =
+
+        let myvar = "me";
+
+        console.log(myvar == "you"); //false
+
+        console.log(myvar == "me"); //true
+
+
+
+
+    </script>
+
+</body>
+</html>

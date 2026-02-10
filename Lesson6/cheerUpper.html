@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder="type your name" id="nameInput">
+
+    <label>Your age:</label>
+    <input type="number" value="25" id="ageInput">
+    <button id="complement">Say nice things about me</button>
+
+    <script>
+
+        const nameInput = document.getElementById("nameInput");
+        const ageInput = document.getElementById("ageInput");
+        const complement = document.getElementById("complement");
+
+ complement.addEventListener("click", () => {
+    document.body.innerHTML =
+        "You know what " + nameInput.value + "? " +
+        "I don’t think you hear this enough, but it’s genuinely great that you exist. " +
+        "Out of all the people in the world, *you* — yes, you, " + nameInput.value + " — " +
+        "ended up right here, clicking this button at exactly the age of " + ageInput.value + ". " +
+        "That alone already makes this moment kind of special. " +
+
+        "Being " + ageInput.value + " years old is a wild phase, honestly. " +
+        "You’re old enough to understand things, young enough to still be curious, " +
+        "and right now you’re using that curiosity in the best possible way. " +
+        "Most people at the age of " + ageInput.value + " have no idea what they’re doing — " +
+        "but here you are, learning, experimenting, and pressing buttons just to see what happens. " +
+
+        "And let me say this clearly, " + nameInput.value + ": " +
+        ageInput.value + " is an excellent age to start doing cool things. " +
+        "It’s the kind of age where small decisions quietly turn into big wins later on. " +
+        "Future " + nameInput.value + " is already somewhere ahead, " +
+        "looking back at this exact moment and thinking, " +
+        "‘Wow, I’m really glad I started back when I was only " + ageInput.value + ".’ " +
+
+        "So take a second and appreciate yourself. " +
+        "Appreciate that " + nameInput.value + " at the age of " + ageInput.value + " " +
+        "chose curiosity over boredom, learning over scrolling, and trying over giving up. " +
+        "That’s not small. That’s huge. " +
+
+        "Honestly, if there were a leaderboard for being awesome at " + ageInput.value + ", " +
+        nameInput.value + ", you’d be suspiciously high on it. " +
+        "So keep going, keep clicking, keep learning — " +
+        "because the world absolutely needs more " + nameInput.value + "s like you.";
+});
+        
+    </script>
+    
+</body>
+</html>

@@ -28,7 +28,15 @@
 
     <main>
 
-        <button id="btnFlip">FLIP THE COIN!</button>
+        <div id="buttons">
+
+            <button id="btnHeads">GUESS HEADS!</button>
+
+            <button id="btnTails">GUESS TAILS!</button>
+
+        </div>
+
+     
 
         <img id="coin" src="neutral.png" alt="coin">
 
@@ -37,22 +45,30 @@
 
     <script>
 
-        const flipButton = document.getElementById("btnFlip");
+        const flipHeads = document.getElementById("btnHeads");
+        const flipTails = document.getElementById("btnTails");
         const coinImg = document.getElementById("coin");
+        //create a variable for tracking score here
 
 
-        flipButton.addEventListener("click", () => {
+        flipHeads.addEventListener("click", () => {
             let randomNumber = Math.random();
             let roundedNumber = Math.round(randomNumber);
             console.log(roundedNumber);
 
             if (roundedNumber == 0){
                 coinImg.src = "heads.png";
+                //increase score here
+                alert('You guessed right, keep going!');
             } else {
-                coinImg.src = "tails.png"
+                //figure out how to zero out the score here
+                alert('You guessed wrong, so Game Over for you!');
+                
             }
 
         });
+
+        //repeat the same structure here for flipTails:
 
 
     </script>

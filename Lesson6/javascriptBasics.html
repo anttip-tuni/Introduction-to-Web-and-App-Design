@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="switch">Light switch</button>
+
+    <script>
+
+        //var is an older way of creating variables in JavaScript
+        var myVariable; //this creates a variable but doesn't assign anything into it
+
+        var myAssignedVariable = "sugar"; //here we both create and assign a variable
+
+        //let creates a regular variable in JavaScript that you can reassign later
+        let worldPeace = "soon";
+
+        worldPeace = "not likely"; //you can re-assign a variable created with let
+
+        const pi = 3.14159; //when you use const to create a variable, you cant reassign it later
+
+        //pi = 2.5; //you cannot reassign a const, it will throw a console error
+
+        //think of const as "the reference is constant"
+
+        const player = {
+            name: "Antti",
+            score: 0
+        }
+
+        //player = "cat"; //still can't reassign a const
+
+        player.score = 1;  //the thing assigned to a const can change, just you cant assign something else to the const
+
+        //TYPES
+
+        let myString = "abcdefg"; //a string type of variable
+
+        //you can't or shouldn't really do math with strings, but JS is kind of weird when it comes to that...
+
+        let memeString = "11";
+
+        //console.log(memeString + 1); //console.logs 111
+
+        console.log(memeString - 1); //logs 10 so here the math is weirdly working
+
+        //Explanation:
+
+        //the + operator is also used fo the concatenation of string like this:
+
+        let firstPart = "Hello";
+
+        let secondPart = " World";
+
+        console.log(firstPart + secondPart); //logs Hello World
+
+        console.log(firstPart - secondPart); //NaN because minus doesnt make sense here, how can you subtract "world" from "hello"??
+
+        //so because + and - are used a bit differently in JS, when you subtract, a number looking string gets coerced into an actual number
+
+        console.log(typeof(myString)); //checks the type of myString variable. Logs string 
+
+        let myNumber = "123";
+
+        console.log(typeof(myNumber)); //a string because of the quotes
+
+        myNumber = 123;
+
+        console.log(typeof(myNumber)); //now its a number
+
+        //booleans are a very simple TYPE
+
+        let myBool = "false";
+
+         console.log(typeof(myBool)); //string
+
+         myBool = false;
+
+         console.log(typeof(myBool)); //boolean
+
+         //where booleans really shine is when you want to be able to change the state of something to the opposite state, without even necessarily knowing the current state.
+         //For example: we want to switch the light off, but the button can be already pressed up or down. But regarldless of the button position, we know that it will toggle the opposite of the current state (where lights are on)
+
+        let lightsOn = true;
+
+        const myButton = document.getElementById("switch");
+
+        myButton.addEventListener("click", () => {
+
+            lightsOn = !lightsOn; // this basically says "lightsOn" should be what its not
+
+            if (lightsOn) {
+                document.body.style.backgroundColor = "white";
+            } else {
+                document.body.style.backgroundColor = "black";
+            }
+        });
+
+        //Arrays are another type in JS
+
+        const topEmployees = ["Mike", "Kate", "Paul", "John"];
+
+        console.log(typeof(employees)); //object (but its an array object)
+
+        //we need to fire one of the worst employees and we will just draw a random lot
+
+        console.log(topEmployees[0]); // you can get a certain slot from the array like this //logs Mike
+
+        const randomIndex = Math.floor(Math.random() * topEmployees.length);
+
+        alert("The person who just got fired is: " + topEmployees[randomIndex]);
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

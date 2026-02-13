@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        main {
+            display: flex;
+            min-height: 95vh;
+            flex-wrap: wrap;
+            align-content: flex-start;
+
+        }
+
+        div {
+            width: 10px;
+            height: 10px;
+            background-color: #cbc16c;
+            margin: 1px;
+            transition: 
+            width 1s ease,
+            height 1s ease,
+            transform 1s ease
+
+        }
+
+        .active {   
+
+                background-color: #948d50;
+                transform: rotateY(45deg);
+                width: 50px;
+                height: 50px;
+                transition: 
+                width 1s ease,
+                height 1s ease,
+                transform 1s ease
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+
+        //the for loop consists of three parts: 
+            //-create a variable for loop index, often called i
+            //-define how many times to loop by checking i against a value
+            //-increment i if still looping
+
+        const container = document.createElement('main');
+
+
+        for (let i = 0; i < 9000; i++ ){
+
+            const div = document.createElement('div');
+            div.addEventListener('mouseenter', ()=>{
+              
+                div.classList.add("active");
+
+            });
+
+            div.addEventListener('mouseleave', ()=>{
+              
+                div.classList.remove("active");
+
+            });
+             
+
+            container.appendChild(div);
+
+        }
+
+        document.body.appendChild(container);
+
+    </script>
+    
+</body>
+</html>

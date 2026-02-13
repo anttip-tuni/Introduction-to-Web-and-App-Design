@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        #btnFlip {
+            width: 10vw;
+            height: 6vh;
+            margin: 4vh;
+        }
+
+        .spinAnimation {
+            animation: spin 0.5s ease;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(720deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <div id="buttons">
+
+            <button id="btnHeads">GUESS HEADS!</button>
+
+            <button id="btnTails">GUESS TAILS!</button>
+
+        </div>
+
+
+
+        <img id="coin" src="neutral.png" alt="coin">
+
+    </main>
+
+
+    <script>
+
+        const flipHeads = document.getElementById("btnHeads"); //grab the heads button from document
+        const flipTails = document.getElementById("btnTails");
+        const coinImg = document.getElementById("coin");
+        let score = 0;
+
+
+        flipHeads.addEventListener("click", () => {
+            handleFlip("heads");
+
+        });
+
+        //repeat the same structure here for flipTails:
+        flipTails.addEventListener("click", () => {
+            handleFlip("tails");
+
+        });
+
+        function handleFlip(playerGuess) {
+
+            let randomNumber = Math.random();
+            let roundedNumber = Math.round(randomNumber);
+
+            console.log(roundedNumber);
+
+            coinImg.classList.add("spinAnimation");
+
+
+            if (roundedNumber == 0) {
+
+                coinImg.src = "heads.png";
+
+                setTimeout(() => {
+                    if (playerGuess == "heads") {
+                        score++;
+                        alert('You guessed right, keep going! Your current score is: ' + score);
+                    } else {
+
+                        score = 0;
+
+                        alert('You guessed wrong, so Game Over for you!');
+
+                    }
+                
+                    coinImg.classList.remove("spinAnimation");
+
+                }, 600)
+
+
+
+
+            } else if (roundedNumber == 1) {
+
+                coinImg.src = "tails.png";
+
+                setTimeout(() => {
+                    if (playerGuess == "tails") {
+                        score++;
+                        alert('You guessed right, keep going! Your current score is: ' + score);
+                    } else {
+
+                        score = 0;
+
+                        alert('You guessed wrong, so Game Over for you!');
+
+                    }
+                    coinImg.classList.remove("spinAnimation");
+                    
+                }, 600)
+
+
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

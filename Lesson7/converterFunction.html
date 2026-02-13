@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Convert frames to minutes and seconds (25 fps)</h1>
+
+   <label>Frames:</label> <input id="framesInput" type="number">
+   <label>FPS:</label> <input id="fpsInput" type="number" value="25">
+
+   <div id="result"></div>
+
+   <script>
+
+   const frameInput = document.querySelector("#framesInput"); //get a reference to the frame input
+
+   const fpsInput = document.querySelector("#fpsInput"); //get a reference to the frame input
+
+   const result = document.querySelector("#result"); //get a reference to the result div
+
+   frameInput.addEventListener("input", convertFrames);
+
+   fpsInput.addEventListener("input", convertFrames);
+
+   function convertFrames(){
+    
+   let frames = frameInput.value;
+
+   let totalSeconds = Math.floor(frames / fpsInput.value);
+
+   let minutes = Math.floor(totalSeconds / 60);
+
+   let seconds = totalSeconds - minutes * 60;
+
+   result.textContent = `${frames} frames equals ${minutes} minutes and ${seconds} seconds.`;
+
+
+
+   }
+
+
+   </script>
+    
+</body>
+</html>

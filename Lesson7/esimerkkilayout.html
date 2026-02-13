@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #container {
+        display: flex;
+        justify-content: center;
+        min-height: 95vh;
+    }
+    div {
+        border: 1px solid black;
+    }
+
+    #left {
+        width: 25%;
+    }
+
+    #center {
+        width: 50%;
+    }
+
+    #right {
+        width: 25%;
+    }
+
+    #right, #center {
+        display: flex;
+     
+        flex-direction: column;
+    }
+
+    .top, .bottom {
+        min-height: 50%;
+    }
+
+</style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="left">Text</div>
+        <div id="center">
+            <div class="top">Top</div>
+            <div class="bottom">Bottom</div>
+        </div>
+        <div id="right">
+            <div class="top">Top</div>
+            <div class="bottom">Bottom</div>
+        </div>
+    </div>
+</body>
+
+</html>

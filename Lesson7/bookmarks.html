@@ -32,6 +32,13 @@
             justify-content: center;
  
         }
+
+        .category a{
+
+            display: block;
+            margin: 1rem;
+
+        }
         
     </style>
 </head>
@@ -39,6 +46,7 @@
 <body>
     <header>
         <h1>MY BOOKMARKS</h1>
+        <input id="search" type="text" placeholder="Filter links">
     </header>
 
    <div id="container">
@@ -74,7 +82,7 @@
         <h2>MY WEBSITES</h2>
         <a href="https://github.io" target="_blank">GitHub Pages</a>
         <a href="https://wordpress.com" target="_blank">WordPress</a>
-        <a href="https://www.netlify.com" target="_blank">Netlify</a>
+        <a href="https://www.netlify.com" target="_blank">Netlify!</a>
         <a href="https://vercel.com" target="_blank">Vercel</a>
         <a href="https://www.behance.net" target="_blank">Behance Portfolio</a>
     </div>
@@ -98,6 +106,34 @@
     </div>
 
 </div>
+
+<script>
+
+    const searchInput = document.querySelector('#search');
+
+    const items = document.querySelectorAll('.category a');
+
+    searchInput.addEventListener("input", ()=>{
+
+        let searchterm = searchInput.value.toLowerCase();
+
+        console.log(searchterm);
+
+        items.forEach(item => {
+
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(searchterm)){
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        }); //we are looping through the collection of links. We are calling each individual link "item". And then we are doing something for each item (link).
+
+    });
+
+</script>
 
 </body>
 

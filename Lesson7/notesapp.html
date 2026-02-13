@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <textarea id="notes" cols="50" rows="20"></textarea>
+
+    <script>
+        const textinput = document.querySelector("#notes");
+
+        textinput.addEventListener('input', ()=>{
+            const usertext = textinput.value;
+            localStorage.setItem('myNotes', usertext);
+        });
+
+        //load the notes when the page loads
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const myRetrievedNotes = localStorage.getItem('myNotes');
+            
+            textinput.value = myRetrievedNotes;
+        });
+
+    </script>
+    
+</body>
+</html>
